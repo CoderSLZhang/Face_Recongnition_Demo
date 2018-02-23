@@ -5,20 +5,20 @@
 
 import tensorflow as tf
 import numpy as np
-from facenet.src.models import inception_resnet_v1
+import scipy
+from face_brain.facenet.src.models import inception_resnet_v1
 
-
-FACE_SIZE = (150, 150)
 
 MODEL_CKPT = './pretrain_inception_resnet_v1/model-20170512-110547.ckpt'
 
 
 class Facenet():
 
-    def __init__(self):
+    def __init__(self, face_size):
+        self._FACE_SIZE = face_size
         self._inputs_op = tf.placeholder(
             dtype=tf.float32,
-            shape=(None, FACE_SIZE[0], FACE_SIZE[1], 3),
+            shape=(None, face_size[0], face_size[1], 3),
             name='inputs_placeholder')
         embeding_op, _ = inception_resnet_v1.inference(
             self._inputs_op,
@@ -34,8 +34,17 @@ class Facenet():
         saver = tf.train.Saver()
         saver.restore(self._sess, MODEL_CKPT)
 
-    def encode_images(self, images):
-        preprocess_images = self._prewhiten(images)
+    def encode_faces(self, images):
+        resize_images = []
+        for image in images:
+            if image.shape[:2] != self._FACE_SIZE:
+                print('image.shape:', image.shape)
+                image = scipy.misc.imresize(image, self._FACE_SIZE, interp='bilinear')
+            resize_images.append(image)
+
+        resize_images = np.stack(resize_images)
+
+        preprocess_images = self._prewhiten(resize_images)
 
         embeding = self._sess.run(
             self._output_op,
