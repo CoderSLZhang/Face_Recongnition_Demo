@@ -99,3 +99,5 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+./face_brain/pretrain_inception_resnet_v1/
