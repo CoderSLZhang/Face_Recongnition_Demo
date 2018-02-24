@@ -14,14 +14,15 @@ def face_detect(image, face_size, margin=10):
     threshold = [0.6, 0.7, 0.7]  # three steps's threshold
     factor = 0.709  # scale factor
 
+    img_size = np.asarray(image.shape)[0:2]
+
     with tf.Graph().as_default():
-        sess = tf.Session()
-        with sess.as_default():
+        with tf.Session() as sess:
             pnet, rnet, onet = detect_face.create_mtcnn(sess, None)
 
-    img_size = np.asarray(image.shape)[0:2]
-    bounding_boxes, _ = detect_face.detect_face(
-        image, minsize, pnet, rnet, onet, threshold, factor)
+            bounding_boxes, _ = detect_face.detect_face(
+                image, minsize, pnet, rnet, onet, threshold, factor)
+
     bounding_boxes = bounding_boxes.astype(np.int)
 
     faces = []
