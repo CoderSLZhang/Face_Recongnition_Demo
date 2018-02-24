@@ -3,7 +3,7 @@
 # 2018-2-23
 
 
-from face_brain.facenet.src.align import detect_face
+from facenet.src.align import detect_face
 import tensorflow as tf
 import numpy as np
 from scipy import misc
