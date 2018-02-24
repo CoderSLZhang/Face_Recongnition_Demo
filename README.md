@@ -21,19 +21,30 @@ facebrain是一个用深度学习进行人脸识别的python api.
 ## 使用
 使用前需要安装tensorflow, numpy, scipy, cv2
 
-##### 引入
+1. 引入
+
 from facebrain.facebrain import Facebrain
-##### 创建facebrain实例
+
+2. 创建facebrain实例
+
 face_brain = Facebrain(face_size=(150, 150))
-##### 读取图片
+
+3. 读取图片
+
 tfboys_img = face_brain.read_image(file)
 
 file可以是一个路径或是一个file object
-##### 人脸检测
+
+4. 人脸检测
+
 tfboys_faces, tfboys_boxes = face_brain.detect_faces(tfboys_img)
-##### 人脸编码
+
+5. 人脸编码
+
 tfboys_encoding = face_brain.encode_faces(tfboys_faces)
-##### 人脸对比
+
+6. 人脸对比
+
 比较人脸编码的相似度，越小越相似
 
 face_brain.compare_faces(tfboys_encoding[0], database_encodings)
@@ -41,4 +52,5 @@ face_brain.compare_faces(tfboys_encoding[0], database_encodings)
 当人脸编码相似度小于threshold 0.7时判断为同一个人
 
 face_brain.recognize_face(tfboys_encoding[0], database_encodings)
-##### 具体使用参见demo中的jupyter notebook 
+
+==具体使用参见demo中的jupyter notebook== 
