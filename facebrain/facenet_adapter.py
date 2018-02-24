@@ -9,7 +9,7 @@ import scipy
 from facenet.src.models import inception_resnet_v1
 
 
-MODEL_CKPT = './face_brain/pretrain_inception_resnet_v1/model-20170512-110547.ckpt'
+MODEL_CKPT = './facebrain/pretrain_inception_resnet_v1/model-20170512-110547.ckpt'
 
 
 class Facenet():

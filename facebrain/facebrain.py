@@ -3,13 +3,13 @@
 # 2018-2-22
 
 
-from face_brain import facenet_adapter
-from face_brain import face_detector_adapter
+from facebrain import facenet_adapter
+from facebrain import face_detector_adapter
 import numpy as np
 import scipy
 
 
-class Face_brain:
+class Facebrain:
 
     def __init__(self, face_size=(150, 150)):
         self._FACE_SIZE = face_size
