@@ -54,3 +54,13 @@ face_brain.compare_faces(tfboys_encoding[0], database_encodings)
 face_brain.recognize_face(tfboys_encoding[0], database_encodings, threshold=0.7)
 ```
 *具体使用参见demo中的jupyter notebook* 
+
+## Demo
+### jupyther-notebook
+人脸检测，提取，识别
+
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo2.jpg)
+### iOS 人脸识别
+需要启动face_server.py，配置好iOS项目ip和端口
+
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo1.jpg)
