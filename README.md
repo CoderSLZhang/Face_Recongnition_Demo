@@ -51,6 +51,6 @@ face_brain.compare_faces(tfboys_encoding[0], database_encodings)
 ```
 当人脸编码相似度小于threshold 0.7时判断为同一个人
 ```
-face_brain.recognize_face(tfboys_encoding[0], database_encodings)
+face_brain.recognize_face(tfboys_encoding[0], database_encodings, threshold=0.7)
 ```
 *具体使用参见demo中的jupyter notebook* 
