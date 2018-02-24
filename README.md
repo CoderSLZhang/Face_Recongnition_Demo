@@ -1,0 +1,44 @@
+# Facebrain
+
+facebrain是一个用深度学习进行人脸识别的python api. 
+
+人脸识别采用facenet，见["FaceNet: A Unified Embedding for Face Recognition and Clustering"](http://arxiv.org/abs/1503.03832).
+
+人脸检测采用MTCNN.
+
+模型由开源项目[facenet](https://github.com/davidsandberg/facenet)提供.
+
+## 预训练模型
+人脸识别模型为inception_resnet_v1, 在[MS-Celeb-1M](https://www.microsoft.com/en-us/research/project/ms-celeb-1m-challenge-recognizing-one-million-celebrities-real-world/) 训练完成, 达到0.992准确率.
+
+在自己的数据集上训练模型参见github项目[facenet](https://github.com/davidsandberg/facenet)
+
+预训练模型下载地址[inception_resnet_v1](https://pan.baidu.com/s/1eTooi9k). 下载后放到facebrain目录下.
+
+## 结构
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/facebrain_architecture.jpg)
+
+## 使用
+使用前需要安装tensorflow, numpy, scipy, cv2
+
+##### 引入
+from facebrain.facebrain import Facebrain
+##### 创建facebrain实例
+face_brain = Facebrain(face_size=(150, 150))
+##### 读取图片
+tfboys_img = face_brain.read_image(file)
+
+file可以是一个路径或是一个file object
+##### 人脸检测
+tfboys_faces, tfboys_boxes = face_brain.detect_faces(tfboys_img)
+##### 人脸编码
+tfboys_encoding = face_brain.encode_faces(tfboys_faces)
+##### 人脸对比
+比较人脸编码的相似度，越小越相似
+
+face_brain.compare_faces(tfboys_encoding[0], database_encodings)
+
+当人脸编码相似度小于threshold 0.7时判断为同一个人
+
+face_brain.recognize_face(tfboys_encoding[0], database_encodings)
+##### 具体使用参见demo中的jupyter notebook 
