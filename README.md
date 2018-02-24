@@ -34,6 +34,7 @@ face_brain = Facebrain(face_size=(150, 150))
 tfboys_img = face_brain.read_image(file)
 ```
 file可以是一个路径或是一个file object
+
 4. 人脸检测
 ```
 tfboys_faces, tfboys_boxes = face_brain.detect_faces(tfboys_img)
