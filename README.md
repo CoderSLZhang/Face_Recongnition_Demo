@@ -9,7 +9,7 @@ facebrain是一个用深度学习进行人脸识别的python api.
 模型由开源项目[facenet](https://github.com/davidsandberg/facenet)提供.
 
 ## 预训练模型
-人脸识别模型为inception_resnet_v1, 在[MS-Celeb-1M](https://www.microsoft.com/en-us/research/project/ms-celeb-1m-challenge-recognizing-one-million-celebrities-real-world/) 训练完成, 达到0.992准确率.
+人脸识别模型为inception_resnet_v1, 在[MS-Celeb-1M](https://www.microsoft.com/en-us/research/project/ms-celeb-1m-challenge-recognizing-one-million-celebrities-real-world/) 训练完成, 准确率达到0.992.
 
 在自己的数据集上训练模型参见github项目[facenet](https://github.com/davidsandberg/facenet)
 
