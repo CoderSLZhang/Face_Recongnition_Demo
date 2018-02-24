@@ -34,6 +34,12 @@ class Facebrain:
         return self._facenet.encode_faces(images)
 
     def compare_faces(self, from_face, to_faces):
+        if from_face.ndim == 1:
+            from_face = np.expand_dims(from_face, axis=0)
+
+        if to_faces.ndim == 1:
+            to_faces = np.expand_dims(to_faces, axis=0)
+
         dist = np.sqrt(np.sum(np.square(from_face - to_faces), axis=1))
         return dist
 
