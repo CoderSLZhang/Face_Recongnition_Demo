@@ -31,6 +31,9 @@ class Facebrain:
     def encode_faces(self, images):
         if isinstance(images, list):
             images = np.stack(images)
+        elif images.ndim == 3:
+            images = np.expand_dims(images, axis=0)
+
         return self._facenet.encode_faces(images)
 
     def compare_faces(self, from_face, to_faces):
