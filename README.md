@@ -13,7 +13,7 @@ facebrain是一个用深度学习进行人脸识别的python api.
 
 在自己的数据集上训练模型参见github项目[facenet](https://github.com/davidsandberg/facenet)
 
-预训练模型下载地址[inception_resnet_v1](https://pan.baidu.com/s/1eTooi9k). 下载后放到facebrain目录下.
+预训练模型下载地址[inception_resnet_v1](https://pan.baidu.com/s/1eTooi9k). 下载解压后放到facebrain目录下.
 
 ## 结构
 ![image](https://github.com/CoderSLZhang/Facebrain/blob/master/facebrain_architecture.jpg)
