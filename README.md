@@ -13,7 +13,7 @@ facebrain是一个用深度学习进行人脸识别的python api.
 
 在自己的数据集上训练模型参见github项目[facenet](https://github.com/davidsandberg/facenet)
 
-预训练模型下载地址[inception_resnet_v1](https://pan.baidu.com/s/1eTooi9k). 下载后放到facebrain目录下.
+预训练模型下载地址[inception_resnet_v1](https://pan.baidu.com/s/1eTooi9k). 下载解压后放到facebrain目录下.
 
 ## 结构
 ![image](https://github.com/CoderSLZhang/Facebrain/blob/master/facebrain_architecture.jpg)
@@ -54,3 +54,13 @@ face_brain.compare_faces(tfboys_encoding[0], database_encodings)
 face_brain.recognize_face(tfboys_encoding[0], database_encodings, threshold=0.7)
 ```
 *具体使用参见demo中的jupyter notebook* 
+
+## Demo
+### jupyther-notebook
+人脸检测，提取，识别
+
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo2.jpg)
+### iOS 人脸识别
+需要启动face_server.py，配置好iOS项目ip和端口
+
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo1.jpg)
