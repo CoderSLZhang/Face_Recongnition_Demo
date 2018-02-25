@@ -3,8 +3,8 @@
 # 2018-2-22
 
 
-from facebrain import facenet_adapter
-from facebrain import face_detector_adapter
+from facebrain.facenet_adapter import Facenet
+from facebrain.face_detector_adapter import Face_detector
 import numpy as np
 import scipy
 
@@ -12,9 +12,10 @@ import scipy
 class Facebrain:
 
     def __init__(self, face_size=(150, 150)):
-        self._FACE_SIZE = face_size
-        self._facenet = facenet_adapter.Facenet(face_size=face_size)
+        self._facenet = Facenet(face_size=face_size)
+        self._face_detector = Face_detector(face_size=face_size)
         self._facenet.build()
+        self._face_detector.build()
 
     def read_image(self, image_file, mode='RGB'):
         img = scipy.misc.imread(image_file, mode=mode)
@@ -27,6 +28,9 @@ class Facebrain:
             imgs.append(img)
 
         return np.array(imgs)
+
+    def detect_faces(self, image, *args):
+        return self._face_detector.detect_faces(image[0], *args)
 
     def encode_faces(self, images):
         if isinstance(images, list):
@@ -49,6 +53,5 @@ class Facebrain:
     def recognize_face(self, from_face, to_faces, threshold=0.7):
         return self.compare_faces(from_face, to_faces) < threshold
 
-    def detect_faces(self, image):
-        return face_detector_adapter.face_detect(image[0], self._FACE_SIZE)
+    
 

@@ -30,6 +30,9 @@ class Facenet():
 
         self._sess = tf.Session()
 
+    def __del__(self):
+        self._sess.close()
+
     def build(self):
         saver = tf.train.Saver()
         saver.restore(self._sess, MODEL_CKPT)
