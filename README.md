@@ -39,7 +39,8 @@ file可以是一个路径或是一个file object
 ```
 tfboys_faces, tfboys_boxes = face_brain.detect_faces(tfboys_img, adjust_face=True)
 ```
-adjust_face=True的时候可以对外斜的人脸进行矫正, 提高识别的准确率
+adjust_face=True的时候可以对外斜的人脸进行矫正, 提高识别的准确率.
+
 5. 人脸编码
 ```
 tfboys_encoding = face_brain.encode_faces(tfboys_faces)
