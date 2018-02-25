@@ -57,7 +57,7 @@ face_brain.recognize_face(tfboys_encoding[0], database_encodings, threshold=0.7)
 
 ## Demo
 ### jupyther-notebook
-人脸检测，人脸识别，人脸提取，人脸识别
+人脸检测，人脸对齐，人脸提取，人脸识别
 
 ![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo2.png)
 ### iOS 人脸识别
