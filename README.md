@@ -2,7 +2,7 @@
 
 facebrain是一个用深度学习进行人脸识别的python api. 
 
-人脸识别采用facenet, 见paper: ["FaceNet: A Unified Embedding for Face Recognition and Clustering"](http://arxiv.org/abs/1503.03832).
+人脸识别采用facenet，见paper: ["FaceNet: A Unified Embedding for Face Recognition and Clustering"](http://arxiv.org/abs/1503.03832).
 
 人脸检测采用MTCNN, 见paper: ["Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks"](https://kpzhang93.github.io/MTCNN_face_detection_alignment/).
 
@@ -57,9 +57,9 @@ face_brain.recognize_face(tfboys_encoding[0], database_encodings, threshold=0.7)
 
 ## Demo
 ### jupyther-notebook
-人脸检测，提取，识别
+人脸检测，人脸识别，人脸提取，人脸识别
 
-![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo2.jpg)
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo2.png)
 ### iOS 人脸识别
 需要启动face_server.py，配置好iOS项目ip和端口
 
