@@ -30,7 +30,7 @@ app = Flask(__name__)
 def upload_face():
     file = request.files['file']
     img = facebrain.read_image(file)
-    faces, _ , __ = facebrain.detect_faces(img)
+    faces, _ , __ = facebrain.detect_faces(img, adjust_face=True)
 
     if faces is None:
         return_json = json.dumps({
@@ -53,7 +53,7 @@ def upload_face():
 def recognize_face():
     file = request.files['file']
     img = facebrain.read_image(file)
-    faces, _, __ = facebrain.detect_faces(img)
+    faces, _, __ = facebrain.detect_faces(img, adjust_face=True)
 
     if faces is None:
         return_json = json.dumps({
@@ -66,7 +66,10 @@ def recognize_face():
     names = []
     for file in os.listdir(FACES_DIR):
         path = os.path.join(FACES_DIR, file)
-        name = os.path.splitext(file)[0]
+        name, ext = os.path.splitext(file)
+        if ext != '.png':
+            continue
+
         face_paths.append(path)
         names.append(name)
 

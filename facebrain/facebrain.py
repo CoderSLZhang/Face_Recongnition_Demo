@@ -17,9 +17,11 @@ class Facebrain:
         self._facenet.build()
         self._face_detector.build()
 
+
     def read_image(self, image_file, mode='RGB'):
         img = scipy.misc.imread(image_file, mode=mode)
         return np.array([img])
+
 
     def read_images(self, image_files, mode='RGB'):
         imgs = []
@@ -29,8 +31,10 @@ class Facebrain:
 
         return np.array(imgs)
 
-    def detect_faces(self, image, *args):
-        return self._face_detector.detect_faces(image[0], *args)
+
+    def detect_faces(self, image, *args, **kw):
+        return self._face_detector.detect_faces(image[0], *args, **kw)
+
 
     def encode_faces(self, images):
         if isinstance(images, list):
@@ -39,6 +43,7 @@ class Facebrain:
             images = np.expand_dims(images, axis=0)
 
         return self._facenet.encode_faces(images)
+
 
     def compare_faces(self, from_face, to_faces):
         if from_face.ndim == 1:
@@ -50,7 +55,8 @@ class Facebrain:
         dist = np.sqrt(np.sum(np.square(from_face - to_faces), axis=1))
         return dist
 
-    def recognize_face(self, from_face, to_faces, threshold=0.7):
+
+    def recognize_face(self, from_face, to_faces, threshold=0.68):
         return self.compare_faces(from_face, to_faces) < threshold
 
     
