@@ -2,7 +2,7 @@
 
 facebrain是一个用深度学习进行人脸识别的python api. 
 
-人脸识别采用facenet，见paper: ["FaceNet: A Unified Embedding for Face Recognition and Clustering"](http://arxiv.org/abs/1503.03832).
+人脸识别采用facenet, 见paper: ["FaceNet: A Unified Embedding for Face Recognition and Clustering"](http://arxiv.org/abs/1503.03832).
 
 人脸检测采用MTCNN, 见paper: ["Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks"](https://kpzhang93.github.io/MTCNN_face_detection_alignment/).
 
