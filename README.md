@@ -19,7 +19,7 @@ facebrain是一个用深度学习进行人脸识别的python api.
 ![image](https://github.com/CoderSLZhang/Facebrain/blob/master/facebrain_architecture.jpg)
 
 ## 使用
-使用前需要安装tensorflow, numpy, scipy, skimage, cv2
+使用前需要安装python3, tensorflow, numpy, scipy, skimage, cv2
 
 1. 引入
 ```
