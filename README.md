@@ -37,7 +37,7 @@ file可以是一个路径或是一个file object
 
 4. 人脸检测
 ```
-tfboys_faces, tfboys_boxes = face_brain.detect_faces(tfboys_img, adjust_face=True)
+tfboys_faces, tfboys_boxes, tfboys_points = face_brain.detect_faces(tfboys_img, adjust_face=True, adjust_angle=10)
 ```
 adjust_face=True的时候可以对外斜的人脸进行矫正, 提高识别的准确率.
 
