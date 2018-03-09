@@ -62,6 +62,8 @@ face_brain.recognize_face(tfboys_encoding[0], database_encodings, threshold=0.68
 人脸检测，人脸对齐，人脸提取，人脸识别
 
 ![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo2.png)
+![image](https://github.com/CoderSLZhang/Facebrain/blob/master/demo/demo3.jpg)
+
 ### iOS 人脸识别
 需要启动face_server.py，配置好iOS项目ip和端口
 
