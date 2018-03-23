@@ -4,9 +4,9 @@ facebrain是一个用深度学习进行人脸识别的python api.
 
 人脸识别采用facenet，见paper: ["FaceNet: A Unified Embedding for Face Recognition and Clustering"](http://arxiv.org/abs/1503.03832).
 
-人脸检测采用MTCNN, 见paper: ["Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks"](https://kpzhang93.github.io/MTCNN_face_detection_alignment/).
+人脸检测采用MTCNN，见paper: ["Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks"](https://kpzhang93.github.io/MTCNN_face_detection_alignment/).
 
-模型由开源项目[facenet](https://github.com/davidsandberg/facenet)提供.
+深度学习模型由开源项目[facenet](https://github.com/davidsandberg/facenet)提供.
 
 ## 预训练模型
 人脸识别模型为inception_resnet_v1, 在[MS-Celeb-1M](https://www.microsoft.com/en-us/research/project/ms-celeb-1m-challenge-recognizing-one-million-celebrities-real-world/) 训练完成, 准确率达到0.992.
